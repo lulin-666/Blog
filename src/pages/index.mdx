@@ -1,0 +1,29 @@
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseCard from "../components/BaseCard.astro";
+import Collapse from "../components/blog/collapse.astro";
+import Diff from "../components/blog/diff.astro";
+import Error from "../components/blog/error.astro";
+import Info from "../components/blog/info.astro";
+import Kbd from "../components/blog/kbd.astro";
+import Success from "../components/blog/success.astro";
+import Warning from "../components/blog/warning.astro";
+import TimeLine from "../components/page/TimeLine.astro";
+import LinkCard from "../components/page/LinkCard.astro";
+
+<BaseLayout PageID="home">
+  <BaseCard title="home">
+    <div class="flex">
+      <div class="p-6">
+          <font size="10"><b>麓林的博客</b></font>
+
+          胡桃宵宫纳西妲，可莉绫华芙宁娜
+
+      </div>
+    </div>
+
+  </BaseCard>
+
+  <BaseCard title="home" image="/home.webp">
+    
+  </BaseCard>
+</BaseLayout>

@@ -1,0 +1,82 @@
+---
+import type { Post, Page } from "../../types";
+import EnvelopeCard from "../../components/EnvelopeCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseCard from "../../components/BaseCard.astro";
+import { getCollection } from "astro:content";
+import Search from "astro-pagefind/components/Search";
+import { infoTest } from "../../consts";
+
+export async function getStaticPaths({ paginate }: { paginate: any }) {
+  const posts = await getCollection("blog");
+  posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  return paginate(posts, { pageSize: 5 });
+}
+
+const { page }: { page: Page } = Astro.props;
+---
+
+<BaseLayout PageID="blog">
+  <BaseCard title="search">
+    <Search
+      id="search"
+      className="pagefind-ui"
+      uiOptions={{ showImages: false }}
+    />
+  </BaseCard>
+  <div class="mt-8">
+    {
+      page.data.map((post: Post) => (
+        <EnvelopeCard
+          title={post.data.title}
+          image={post.data.image}
+          desc={post.data.description}
+          url={"/blog/" + post.slug}
+          pubDate={post.data.pubDate}
+          badge={post.data.badge}
+          tags={post.data.tags}
+          target="_self"
+        />
+      ))
+    }
+  </div>
+  <br />
+  <div class="flex justify-between mb-8">
+    {
+      page.url.prev ? (
+        <a href={page.url.prev} class="btn bg-base-100 shadow-xl">
+          <svg
+            class="h-6 w-6 fill-current md:h-8 md:w-8"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+          </svg>{" "}
+          {infoTest.prevPage}
+        </a>
+      ) : (
+        <div />
+      )
+    }
+    {
+      page.url.next ? (
+        <a href={page.url.next} class="btn bg-base-100 shadow-xl">
+          {infoTest.nextPage}{" "}
+          <svg
+            class="h-6 w-6 fill-current md:h-8 md:w-8"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+          </svg>
+        </a>
+      ) : (
+        <div />
+      )
+    }
+  </div>
+</BaseLayout>
