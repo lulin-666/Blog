@@ -34,7 +34,7 @@ export const menuItems = [
   {
     id: "contact",
     text: "邮件",
-    href: "Zlulin@outlook.com", // Contact email
+    href: "mailto:Zlulin@outlook.com", // Contact email
     target: "_blank", // Open in a new tab
     svg: "contact",
   },
