@@ -1,7 +1,7 @@
 ---
 title: 4K 120fps？那些关于影视的不为人知的冷知识。
-description: 4K 120fps？1080p 60fps？？4K高码率？？？为你介绍关于影视的冷知识。
-pubDate: 08 02 2024
+description: 4K 120fps？1080p 60fps？？4K高码率？？？为你介绍关于影视的冷知识。（封面是8K图片，加载可能会有点慢）
+pubDate: 08 03 2024
 image: https://vip.helloimg.com/i/2024/08/02/66acddfbb828c.jpg
 tags:
   - 科普
@@ -19,168 +19,104 @@ import Warning from "../../components/blog/warning.astro";
 import TimeLine from "../../components/page/TimeLine.astro";
 import LinkCard from "../../components/page/LinkCard.astro";
 
-## Preface
+# 引言
 
-This article describes how to use the components provided by Frosti in `mdx` to realize the functions that can't be realized by normal `md`.
+随着科技的不断发展，视频产业迎来了前所未有的繁荣。从720p到4K、8K，视频分辨率越来越高，同时也出现了如4K 120fps、1080p 60fps和4K高码率之类的让人疑惑不解的词语。本文将解答大家的疑惑，从视频分辨率到视频帧率，带您全面了解影视的相关知识。
 
-## Main text
+## 一、什么是视频分辨率？
 
-### Getting started
+### 1. 分辨率定义
 
-First you need to create an `mdx` file, which is as simple as changing the extension to `.mdx`.
+视频分辨率，指的是视频图像在水平和垂直方向上的像素数量。视频显示这些像素的方法主要有两种，分别是<b>逐行扫描</b>和<b>隔行扫描</b>。
+逐行扫描用字母<b>“P”</b>来表示。比如，1080P中的“P”就代表逐行扫描（Progressive scanning）。这种扫描方式是指在显示图像时，一行一行地逐行显示。与之相对的是隔行扫描（Interlaced scanning），例如1080i中的“i”代表的就是隔行扫描，即显示一行隔一行，等隔行显示完成后再填补空行。因为逐行扫描能够提供更平滑、清晰的图像质量，所以现在主流扫描方式是逐行扫描。1080P指的就是分辨率为1920×1080的逐行扫描视频格式。
+无论使用什么扫描方式，分辨率越高，视频图像就越清晰，细节表现就越丰富。
 
-### Introducing
+### 2. 常见视频分辨率
 
-The components provided by Frosti are placed in the `/blog` and `/page` folders. Write something in the document properties (frontmatter):
+目前市场上常见的视频分辨率有：240p、480p、720p、1080p、2K、4K、8K等。以下简要介绍这些分辨率的特点：
 
-```astro
-import Collapse from "../../components/blog/collapse.astro";
-import Diff from "../../components/blog/diff.astro";
-import Error from "../../components/blog/error.astro";
-import Info from "../../components/blog/info.astro";
-import Kbd from "../../components/blog/kbd.astro";
-import Success from "../../components/blog/success.astro";
-import Warning from "../../components/blog/warning.astro";
-import TimeLine from "../../components/page/TimeLine.astro";
-import LinkCard from "../../components/page/LinkCard.astro";
-```
+- **240p**：（480×240）标清分辨率，适用于小屏幕设备，如MP4等。
+- **480p**：（640×480）标清分辨率，适用于小型显示设备。
+- **720p**：（1280×720）高清分辨率，广泛应用于网络视频和电视节目。
+- **1080p**：（1920×1080）全高清分辨率，是目前主流的视频分辨率，适用于大部分电视、电脑和投影设备。
+- **2K**：（2048×1080）超高清分辨率，常见于电影制作和部分高端显示器。
+- **4K**：（3840×2160）超高清分辨率，是当前高端电视和电影的主流分辨率。
+- **8K**：（7680×4320）极高清分辨率，尚未普及，但代表着视频技术的发展方向。
 
-### Example
+注意，这些分辨率是视频标准中的常见规格，但实际上，不同设备和应用可能会有所不同。例如，2K有时也可以指2560×1440分辨率的视频，而8K也有不同的标准，如8K UHD (7680×4320) 和 8K FUHD (8192×4320)。
 
-#### Collapse
+## 二、什么是视频帧率？
 
-<Collapse title="This is an example text.">
-  {" "}
-  This is the hidden content!{" "}
-</Collapse>
+### 1. 帧率定义
 
-```astro
-<Collapse title="This is an example text.">
-  {" "}
-  This is the hidden content!{" "}
-</Collapse>
-```
+视频帧率，又称帧速率，是指视频在单位时间内展示的静态图像数量。单位通常为“帧/秒”（fps，frames per second）。帧率越高，视频在单位时间内展示的图像就越多，画面看起来就越流畅。
 
-#### Diff
+### 2. 常见视频帧率及适用场景
 
-<Diff r="/r.png" l="/l.png"></Diff>
+- **24fps**：电影标准帧率，适用于大多数电影和电视剧。24fps可以让画面具有电影感，但快速运动的场景可能会出现拖影。
+- **25fps**：欧洲电视标准帧率，适用于PAL制式的电视节目。25fps的画面流畅度略高于24fps
+- **30fps**：北美电视标准帧率，适用于NTSC制式的电视节目。30fps的画面流畅度较高，但快速运动的场景仍可能出现拖影。
+- **60fps**：高帧率，适用于体育赛事、游戏等高速运动的场景。60fps可以大幅减少拖影现象，让画面更加清晰流畅。
+- **120fps及以上**：超高帧率，主要用于专业领域和高端影视作品，可以带来极致的观影体验。
 
-```astro
-<Diff r="/r.png" l="/l.png"></Diff>
-```
+### 3. 视频帧率的影响
 
-#### Error
+#### 画面流畅度
+帧率越高，画面流畅度越好。在观看高速运动的场景时，高帧率可以减少拖影现象，让画面更加清晰。
+#### 视觉疲劳
+低帧率容易导致视觉疲劳，尤其是在长时间观看视频时。高帧率可以减轻视觉疲劳，提升观影体验。
+#### 沉浸感
+高帧率视频可以带来更强的沉浸感，让观众更容易投入到剧情中。
+#### 带宽和存储需求
+帧率越高，视频文件的大小越大，对带宽和存储设备的要求也越高。
 
-<Error>Maybe something went wrong? </Error>
+### 4.如何选择合适的视频帧率？
 
-```astro
-<Error>Maybe something went wrong? </Error>
-```
+#### 根据内容类型
+电影、电视剧等剧情类作品，24fps或25fps即可满足需求；体育赛事、游戏等高速运动场景，建议使用60fps及以上帧率。
+#### 设备支持
+选择视频帧率时，还需考虑播放设备的支持情况。部分设备可能不支持高帧率视频。
+#### 网络状况
+在网络环境下观看视频时，需考虑带宽限制。高帧率视频可能需要更高的网络带宽。
 
-#### Warning
+## 三、什么是视频码率？
 
-<Warning>Hey! Watch out for potholes! </Warning>
+### 1. 码率定义
 
-```astro
-<Warning>Hey! Watch out for potholes! </Warning>
-```
+视频码率，又称比特率，是指视频文件在单位时间内传输的数据量，单位通常为“比特/秒”（bps，bits per second）或“千比特/秒”（kbps， kilobits per second）。简单来说，视频码率决定了视频文件的大小和播放质量。
 
-#### Message
+### 2. 常见视频码率及适用场景
 
-<Info>It's just a message. </Info>
+- **240kbps**：适用于低分辨率视频，如手机视频通话、部分短视频平台。
+- **500kbps-1Mbps**：适用于标清视频（480p），适合网络环境较差的用户观看。
+- **2Mbps-3Mbps**：适用于高清视频（720p），能满足大部分用户的观看需求。
+- **5Mbps-10Mbps**：适用于全高清视频（1080p），适合网络环境较好的用户。
+- **20Mbps-50Mbps**：适用于4K视频，对带宽和播放设备要求较高。
+- **100Mbps及以上**：适用于8K视频和专业领域，对带宽和播放设备要求极高。
 
-```astro
-<Info>It's just a message. </Info>
-```
+### 3. 视频码率的影响
 
-#### Success
+#### 视频清晰度
+码率越高，视频的清晰度越好。在一定范围内，提高码率可以减少视频压缩带来的损失，使画面更加细腻。
+#### 压缩程度
+码率越低，视频压缩程度越高，画面可能出现马赛克、失真等现象。反之，码率越高，压缩程度越低，画质越接近原始画面。
+#### 网络传输
+码率越高，视频文件越大，对网络传输速度和带宽的要求越高。在网络环境较差的情况下，高码率视频可能导致卡顿、缓冲时间长等问题。
 
-<Success>Congratulations on your successful deployment! </Success>
+## 四、什么是视频编码？
 
-```astro
-<Success>Congratulations on your successful deployment! </Success>
-```
+### 1. 视频编码定义
 
-#### Kbd
+视频编码，又称视频压缩，是指将原始视频数据通过特定的算法进行处理，以减少数据量，便于存储和传输的过程。视频编码的主要目的是在保证视频质量的前提下，尽可能地减小视频文件的大小。
 
-<Kbd>Ctrl</Kbd> + <Kbd>C</Kbd> to copy the text.
+### 2. 常见视频编码格式及特点
 
-```astro
-<Kbd>Ctrl</Kbd> + <Kbd>C</Kbd> to copy the text.
-```
+- **H.264（AVC）**：目前最流行的视频编码格式之一，广泛应用于网络视频、蓝光光盘等。H.264具有高压缩比、高质量的特点，适合在网络环境中传输。
+- **H.265（HEVC）**：作为H.264的继任者，H.265提供了更高的压缩率，能在相同质量下减少50%的文件大小。适用于4K、8K等高分辨率视频。
+- **VP9**：由Google开发的一种开源视频编码格式，与H.265类似，提供了较高的压缩率，适合网络视频传输。
+- **AV1**：是继VP9之后的新一代开源视频编码格式，由Google、Amazon、Microsoft等公司联合开发。AV1旨在提供更高的压缩率，同时降低编码和解码的复杂度。
 
-#### TimeLine
+# 结语
 
-<ul class="timeline timeline-vertical">
-  <li>
-    <TimeLine time="2024 3 17" left="true" check="true">
-      Frosti project launched!
-    </TimeLine>
-    <hr class="bg-primary" />
-  </li>
-  <li>
-    <hr class="bg-primary" />
-    <TimeLine time="2024 4 5" check="true">
-      Using Tailwind CSS and daisyUI.
-    </TimeLine>
-    <hr class="bg-primary" />
-  </li>
-  <li>
-    <hr class="bg-primary" />
-    <TimeLine time="2024 5 31" left="true" check="true">
-      Frosti releases the first version!
-    </TimeLine>
-    <hr class="bg-neutral-content" />
-  </li>
-  <li>
-    <hr class="bg-neutral-content" />
-    <TimeLine time="……">Stay tuned!</TimeLine>
-  </li>
-</ul>
+总的来说，分辨率、帧率、码率和编码都是一个视频不可或缺的部分，在不同的场景下，正确的分辨率、帧率、码率和编码可以使视频更加流畅、真实，更受欢迎。所以，对一个影视工作者来说，正确的分辨率、帧率、码率和编码是非常重要的。同时，他们也为了呈现给我们更好的观感体验付出了大量的人力、财力和精力，我们应该衷心的感谢和尊重我们眼前的每一个视频。
 
-```astro
-<ul class="timeline timeline-vertical">
-  <li>
-    <TimeLine time="2024 3 17" left="true" check="true">
-      Frosti project launched!
-    </TimeLine>
-    <hr class="bg-primary" />
-  </li>
-  <li>
-    <hr class="bg-primary" />
-    <TimeLine time="2024 4 5" check="true">
-      Using Tailwind CSS and daisyUI.
-    </TimeLine>
-    <hr class="bg-primary" />
-  </li>
-  <li>
-    <hr class="bg-primary" />
-    <TimeLine time="2024 5 31" left="true" check="true">
-      Frosti releases the first version!
-    </TimeLine>
-    <hr class="bg-neutral-content" />
-  </li>
-  <li>
-    <hr class="bg-neutral-content" />
-    <TimeLine time="……">Stay tuned!</TimeLine>
-  </li>
-</ul>
-```
-
-#### LinkCard
-
-<LinkCard
-  title="Frosti"
-  desc="My blog project!"
-  url="https://github.com/EveSunMaple/Frosti"
-  img="/favicon.ico"
-/>
-
-```astro
-<LinkCard
-  title="Frosti"
-  desc="My blog project!"
-  url="https://github.com/EveSunMaple/Frosti"
-  img="/favicon.ico"
-/>
-```
