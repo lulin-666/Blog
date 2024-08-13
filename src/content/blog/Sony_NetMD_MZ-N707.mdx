@@ -1,0 +1,158 @@
+---
+title: 索尼Net MD MZ-N707随身听USB拷歌教程
+description: 偶然间找到了个老古董，索尼的MZ-N707，但OpenMG Jukebox的光碟不见了，于是就有了这篇博客。（唉，说多了都是泪）
+pubDate: 08 12 2024
+image: https://vip.helloimg.com/i/2024/08/13/66bb085c88490.png
+tags:
+  - 索尼
+  - 随身听
+  - 教程
+  - MZ-N707
+  - 拷歌
+  - 影音
+---
+
+import Collapse from "../../components/blog/collapse.astro";
+import Diff from "../../components/blog/diff.astro";
+import Error from "../../components/blog/error.astro";
+import Info from "../../components/blog/info.astro";
+import Kbd from "../../components/blog/kbd.astro";
+import Success from "../../components/blog/success.astro";
+import Warning from "../../components/blog/warning.astro";
+import TimeLine from "../../components/page/TimeLine.astro";
+import LinkCard from "../../components/page/LinkCard.astro";
+
+# 前言
+
+在家没事的时候找到了个老古董，<b>SONY Net MD Walkman MZ-N707</b>，但OpenMG Jukebox的光碟不见了，于是我研究了两天，终于找到了解决办法。本文都是我的亲身经历，希望能给你一些帮助。
+
+# 一、Net MD Walkman介绍
+
+Net MD Walkman是由索尼公司推出的一款便携式音频播放器，它采用了MiniDisc（MD）技术。这款产品在当时具有创新性和革命性，因为它结合了磁、光、电、机技术，提供了接近CD的音质和长期保存性，同时具有卡带的可录可抹性。
+
+![MD图片](https://vip.helloimg.com/i/2024/08/13/66bb08c0ac488.png)
+
+Net MD Walkman的一个显著特点是它可以通过USB连接电脑，直接将电脑中的音乐传输到MD上。这一功能在当时的音乐播放器中是一次重大进步。索尼的Net MD Walkman首次推出是在2001年，型号为MZ-N1。这款产品支持将MP3和WMA文件转换为ATRAC3格式进行传输，并使用了“MagicGate”和“OpenMG”版权保护技术。(就是因为这个技术害得我研究两天的)
+
+![Net MD Walkman连接电脑拷歌](https://vip.helloimg.com/i/2024/08/13/66bb085e0e60b.png)
+
+MZ-N1型号的Net MD Walkman具备一些先进的功能，如线性同步录音（TYPE-R），可以在不牺牲太多音质的情况下，以两倍或四倍于原始时间的速度进行录音或播放。这意味着一张80分钟的MD可以播放多达320分钟的音乐。此外，它还具有个人光盘记忆功能，可以从停止的音轨重新播放。
+
+Net MD Walkman的设计也很独特，包括一个全镁合金的机身、一个大型LCD显示屏和一个带有索引搜索功能的线控。它还附带了USB底座附件，可以进行充电和数据传输。
+
+![Net MD Walkman图片](https://vip.helloimg.com/i/2024/08/13/66bb08602e132.png)
+
+可见Net MD Walkman在当时是一项极为先进的技术。到现在，它仍然是音乐播放器发展史上的一个重要里程碑。
+
+# 二、如何拷歌
+
+Net MD Walkman有几种拷歌方式，拿我手上这台Sony Net MD Walkman MZ-N707来说，有电脑传输和音频线录制两种方法，使用音频线录制只要将MZ-N707用自带的3.5mm音频线连接到你的音源设备（如MP3播放器、手机、电脑等），打开录制模式，然后用音源设备播放音乐就好了。所以我主要讲讲如何使用另一种方法：使用电脑传输。
+
+## 1.安装软件
+
+可以用的软件有几个，我这里推荐<b>SonicStage 4.3</b>。
+
+安装包：<br/>
+[网盘链接](https://pan.huang1111.cn/s/LxOO4H6) （密码：ss43）<br/>
+[备用网盘链接](https://lulin.lanzouh.com/ieNdL278wrda) （密码：ss43）
+
+除此之外，还可以使用<b>OpenMG Jukebox 2.2</b>、<b>Web MiniDisc</b>。网上也有教程，这里就不多赘述了。
+
+打开下载并解压好的安装包，再打开<b>“SonicStage_4.3cn_final”</b>文件夹，找到<b>SetupSS.exe</b>安装程序，双击安装，然后一路跟着安装向导默认安装就行了。
+
+安装完之后<b>重启</b>电脑，在桌面可以看到<b>SonicStage</b>的软件图标。
+
+## 2.安装驱动
+ 
+将Net MD Walkman使用自带的<b>Mini USB</b>数据线连接到电脑，然后右键<b>“开始”</b>图标，选择<b>“设备管理器”</b>。此时一般会出现<b>三种</b>情况：
+
+ <b>（1）在“通用串行总线控制器”中看到一个名为<b>“Net MD”</b>或类似的设备，说明驱动已经安装完成，可以跳过这一步。</b>
+
+ <b>（2）在“其他设备”中看到一个名为“Net MD”或类似的设备，左侧有一个黄色感叹号，说明驱动未安装，下面介绍如何安装驱动：</b>
+
+ ①下载驱动
+
+驱动包下载：<br/>
+[网盘链接](https://pan.huang1111.cn/s/K9wwxUY) （密码：netmd）<br/>
+[备用网盘链接](https://lulin.lanzouh.com/i2bpx279c9yj) （密码：netmd）
+
+ ②<b>解压</b>下载好的安装包，会看到一个名为<b>“NETMD760”</b>的文件夹。
+
+ ③右键<b>“开始”</b>图标，选择<b>“设备管理器”</b>，在<b>“其他设备”</b>中找到左侧有一个黄色感叹号的名为<b>“Net MD”</b>或类似的设备，<b>右键</b>选择<b>“更新驱动程序”</b>，此时会弹出一个界面，选择下面的<b>“浏览我的电脑以查找驱动程序”</b>，在弹出的窗口点击路径右边的<b>“浏览”</b>，然后找到你存放刚才解压好“NETMD760”文件夹的位置，选择刚才解压好的“NETMD760”文件夹，点击<b>“下一步”</b>。
+
+ ④不出意外的话，你应该会在<b>“通用串行总线控制器”</b>中看到一个名为<b>“Net MD”</b>或类似的设备，说明驱动已经安装完成。
+
+ <b>（3）未发现设备：检查数据线是否插好，USB接口是否损坏，Net MD是否有电且保持开机显示“PC→→MD”的状态，或检查Net MD是否损坏，也可以将这两个驱动包下载安装试试：</b>
+
+驱动包下载（1）：<br/>
+[网盘链接](https://pan.huang1111.cn/s/nqRRAfm) （密码：netmd）<br/>
+[备用网盘链接](https://lulin.lanzouh.com/iqkgc279ek9c) （密码：netmd）
+
+驱动包下载（2）：<br/>
+[网盘链接](https://pan.huang1111.cn/s/oXVV9F8) （密码：netmd）
+
+## 3.准备音乐
+
+在音乐网站下载<b>.mp3</b>格式的音乐文件，放在一个<b>单独的文件夹</b>中。
+
+推荐[flac.life](https://flac.life/)或<b>2.5.0及以前版本</b>的<b>洛雪音乐</b>搭配<b>六音音源</b>使用。
+
+## 4.拷入音乐
+
+ （1）打开<b>SonicStage</b>，将鼠标<b>悬停</b>在<b>“音乐源”</b>界面，在下拉选项卡中选择<b>“导入文件夹”</b>，<b>只勾选</b>你存放音乐的文件夹前的方框，将下方的<b>“MP3文件[*.mp3]”</b>勾选上，点击<b>“确定”</b>，等待歌曲导入。
+
+ （2）然后将Net MD用数据线连接电脑，将鼠标<b>悬停</b>在<b>“传输”</b>界面，在下拉选项卡中选择<b>“Net MD”</b>或类似的选项。在左侧方框内点击左下角的<b>“√”</b>全选或按住键盘上的<b>“Ctrl”</b>键<b>并用鼠标点击</b>选择你想要拷入Net MD中的歌曲。
+
+ （3）选择好你要拷入Net MD中的歌曲后，点击中间的<b>“→”</b>开始拷入。等待软件自动转换并拷入。<b>注意</b>，每张MD都有时间或容量，拷满了就拷不进了。如果你听到一声悦耳的音乐并看到歌曲后显示<b>“已传输”</b>，那么恭喜你，你已经一帆风顺地成功拷入了。
+
+<b>如果你并没有成功，那么看看下面的常见问题吧：</b>
+
+## 三、常见问题
+
+### 1.打开<b>SonicStage</b>时弹出<b>“系统信息不一致……”</b>之类的，出现<b>无法传输音乐</b>、<b>不允许转换</b>或是<b>无法响应</b>等问题。
+
+SONY在SonicStage中加入了版权技术。此软件每一次启动的时候，都会检查计算机系统信息，如发现有与最初安装时系统信息记录不符的时候，就会启动失败。或是即使启动了，有些歌曲也会不允许转换，能够转换(刻录)的那几首歌往往都是前面没出现问题之前没有刻录过的歌曲，不允许转换的歌曲是因为启动后软件发现与最初刻录信息不符所致。
+
+解决的办法只有升级SonicStage或是重新安装SonicStage。而有些文件在卸载的时候是无法删除的，所以就残留在系统里。即使你反反复复重新安装，前面没有被删完的信息还会被识别出来，所以和没有重装一样。而SONY的SonicStage在安装时又要求系统非常的干净，有时候真的能被SONY弄疯。
+
+（1）先备份下载好的音乐，以免被删除。然后把所有USB存储设备从电脑上拔掉（你的Net MD、U盘、USB移动硬盘盒之类的），然后使用Geek把所有和OpenMG相关的软件全部删掉。
+
+Geek下载：<br/>
+[网盘链接](https://pan.huang1111.cn/s/RYaqViB) （密码：Geek）<br/>
+[备用网盘链接](https://lulin.lanzouh.com/iDc7027byvgh) （密码：Geek）
+
+下载好后双击打开Geek，按顺序依次卸载：
+
+① SonicStage 4.3（如果有其他的刻录软件，例如OpenMG Jukebox、Music Center之类的也要卸载）
+② OpenMG Limited Patch
+③ OpenMG Secure Module
+
+然后你的电脑应该会自动重启，重启后找到以下路径删除文件夹：
+
+① C:\Program Files\Common Files\Sony Shared
+② C:\Program Files (x86)\Sony
+
+删完上面两个，后面的就要权限了，首先下载安装Everything：
+
+Everything安装包：<br/>
+[网盘链接](https://pan.huang1111.cn/s/QzyBNcm) （密码：Everything）<br/>
+[备用网盘链接](https://lulin.lanzouh.com/i2uQd27c1bti) （密码：Every）
+
+双击打开下载好的安装包，跟着安装向导一路默认安装。安装好后双击打开Everything，等待扫描完成后在上方的搜索栏中搜索“Documents and Settings”，在搜索结果的“Documents and Settings”文件夹上右键，选择“属性”，在弹出的界面顶部选择“安全”，然后点击右下角的“高级”，在弹出的界面中，点击左下角的“更改权限”，选中“Everyone”，然后点击左下角的“编辑”，将弹出界面中上方的“类型”选择为“允许”，“应用于”选择为“此文件夹、子文件夹和文件”，勾选下方的“完全控制”，最后连续点击三次“确定”。
+
+给完权限后在Everything中搜索Sony、SonicStage和OpenMG，除了你下载的安装包和在系统文件夹（system、system32）里面的文件，其他的全部删掉，删不了的就再给权限或者结束进程再删。
+
+文件删完了，该删注册表了。
+
+按下键盘上的“Win”键和“R"键，在弹出的运行窗口输入“regedit”，或者右键“开始”菜单图标，点击“运行”，打开注册表编辑器，删除以下文件夹：
+
+① HKEY_CURRENT_USER/Software/Sony Corporation
+② HKEY_LOCAL_MACHINE/Software/Sony Corporation
+
+反正带Sony、SonicStage和OpenMG的全删了。删完记得清空回收站！！！
+
+删完重启电脑后再双击打开SonicStage安装包（上面有下载链接），一路跟着安装向导默认安装就好了。
+
+如果按照上面的步骤一步一步完成了的话，那么你的问题应该已经解决了。
+
+如果还是没有解决或者是其他的问题的话可以在下方评论提问，作者看到会尽快解答。也可以加作者QQ（1825425761）提问，加好友提问备注“Net MD”。希望这篇博文能对你有所帮助，谢谢！
