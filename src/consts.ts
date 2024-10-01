@@ -66,4 +66,10 @@ export const socialIcons = [
     title: "RSS Feed",
     svg: "rss",
   },
+  {
+    href: "https://www.zhihu.com/people/Lushline",
+    ariaLabel: "zhihu",
+    title: "知乎",
+    svg: "zhihu",
+  },
 ];
